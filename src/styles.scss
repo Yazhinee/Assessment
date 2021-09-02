@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/variable';
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+body {
+    font-family: calibri;
+    margin: 0px !important;
+}
+.flex {
+    display: flex;
+}
+.flex-column {
+    flex-flow: column;
+}
+.flex-1 {
+    flex: 1;
+}
+.spacing-x {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.app-h-100 {
+    height: 100%;
+}
+.text-align-center {
+    text-align: center;
+}
+.text-align-left {
+    text-align: left;
+}
+.p-0 {
+    padding: 0px;
+}
+.p-x-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.p-x-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.p-y-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.p-y-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.p-l-10 {
+    padding-left: 10px;
+}
+.p-r-10 {
+    padding-right: 10px;
+}
+.p-t-0 {
+    padding-top: 0px;
+}
+.p-b-0 {
+    padding-bottom: 0px;
+}
+.m-0 {
+    margin: 0px;
+}
+.m-x-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.m-x-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.m-y-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.m-y-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.m-l-0 {
+    margin-left: 0px;
+}
+.m-r-0 {
+    margin-right: 0px;
+}
+.m-t-0 {
+    margin-top: 0px;
+}
+.m-b-0 {
+    margin-bottom: 0px;
+}
+.jc-center {
+    justify-content: center;
+}
+.ai-center {
+    align-items: center;
+}

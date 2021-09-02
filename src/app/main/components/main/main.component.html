@@ -1,0 +1,46 @@
+<main class="main-container">
+  <div class="top-container">
+    <div class="round-checkbox">
+      <input id="selectAllId" type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll()">
+      <label for="selectAllId" (click)="stopPropagation($event)"></label>
+    </div>
+    <div [attr.aria-label]="selected + ' - ' + selectedCount" *ngIf="selectedCount > 0" class="spacing-x">{{selected}} {{selectedCount}}</div>
+    <div [attr.aria-label]="'None ' + selected" *ngIf="selectedCount === 0" class="spacing-x">None {{selected}}</div>
+    <div role="link" [attr.aria-label]="'downloadSelected '" class="spacing-x" [ngClass]="downloadedFiles.length > 0 ? 'enable': 'disable'"  (click)="onClickDownload()">{{downloadSelected}}</div>
+  </div>
+
+  <div class="table-container">
+    <table class="table" cellpadding="0" cellspacing="0" aria-label="Table of File lists">
+      <thead class="table-head">
+        <tr>
+          <th>
+          </th>
+          <th id="name">Name</th>
+          <th id="device">Device</th>
+          <th id="path">Path</th>
+          <th id="status">Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr [ngClass]="{'selected': list.isChecked}" *ngFor="let list of fileLists; let i = index">
+          <td>
+            <div class="round-checkbox">
+              <input id="listCheck{{i}}" type="checkbox" [(ngModel)]="list.isChecked"
+                (change)="selectList(list.isChecked, $event.target.checked, list)">
+              <label for="listCheck{{i}}" (click)="stopPropagation($event)"></label>
+            </div>
+          </td>
+          <td headers="name - {{list.name}}">{{ list.name }}</td>
+          <td headers="device - {{list.device}}">{{ list.device}}</td>
+          <td headers="path - {{list.path}}">{{ list.path }}</td>
+          <td id="status" headers="status - {{list.status}}"><span *ngIf="list.status == fileStatus.Available" class="dot"></span>{{ list.status }}</td>
+        </tr>
+      </tbody>
+
+      <tfoot></tfoot>
+
+    </table>
+  </div>
+
+</main>
